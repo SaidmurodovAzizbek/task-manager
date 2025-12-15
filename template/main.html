@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff8c00, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .task-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 16px;
+            border-radius: 8px;
+            background: #f9f9f9;
+            margin-bottom: 12px;
+        }
+
+        .task:last-child {
+            margin-bottom: 0;
+        }
+
+        .task-name {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .priority {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .priority.low {
+            background: #4caf50;
+        }
+
+        .priority.medium {
+            background: #ff9800;
+        }
+
+        .priority.high {
+            background: #f44336;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="title">Task Manager</div>
+
+        <div class="task-list">
+            <!-- Task item -->
+            <div class="task">
+                <div class="task-name">Learn Django Templates</div>
+                <div class="priority high">High</div>
+            </div>
+
+            <div class="task">
+                <div class="task-name">Design task list UI</div>
+                <div class="priority medium">Medium</div>
+            </div>
+
+            <div class="task">
+                <div class="task-name">Write documentation</div>
+                <div class="priority low">Low</div>
+            </div>
+
+            <!-- Ko‘p task bo‘lsa scroll ishlaydi -->
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
