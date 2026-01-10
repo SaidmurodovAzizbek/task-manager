@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Task Manager</h1>
+
+        <div id="taskList" class="task-list"></div>
+    </div>
+
+    <div class="create-btn-container">
+        <button class="btn-create-float" onclick="openCreateModal()" title="Create new task">+</button>
+    </div>
+
+    <div id="createModal" class="modal">
+        <div class="modal-content">
+            <h2>Create New Task</h2>
+            <form id="createTaskForm">
+                <div class="form-group">
+                    <label for="taskName">Task Name *</label>
+                    <input type="text" id="taskName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="taskDescription">Description *</label>
+                    <textarea id="taskDescription" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="taskPriority">Priority *</label>
+                    <select id="taskPriority" required>
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                        <option value="urgent">Urgent</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="taskEndDate">Due Date (optional)</label>
+                    <input type="date" id="taskEndDate">
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeCreateModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Task</h2>
+            <form id="editTaskForm">
+                <div class="form-group">
+                    <label for="editTaskName">Task Name *</label>
+                    <input type="text" id="editTaskName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editTaskDescription">Description *</label>
+                    <textarea id="editTaskDescription" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="editTaskPriority">Priority *</label>
+                    <select id="editTaskPriority" required>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                        <option value="urgent">Urgent</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="editTaskEndDate">Due Date</label>
+                    <input type="date" id="editTaskEndDate">
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeEditModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <h2>Delete Task</h2>
+            <p>Are you sure you want to delete this task?</p>
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" onclick="closeDeleteModal()">Cancel</button>
+                <button type="button" class="btn btn-danger" onclick="confirmDelete()">Yes, Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="successMessage" class="success-message"></div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
