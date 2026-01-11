@@ -160,20 +160,9 @@ task-manager/
 python manage.py runserver
 ```
 
-### Creating a Superuser (for Django Admin)
-```bash
-python manage.py createsuperuser
-```
-
-Access admin panel at [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
-
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## Author
 
